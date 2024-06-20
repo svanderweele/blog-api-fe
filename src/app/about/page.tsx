@@ -1,37 +1,9 @@
-import Background from "./assets/img/home-bg.jpg";
-import Navbar from "./components/navbar";
-import Header from "./components/header";
-import Footer from "./components/footer";
-
-type Route = {
-  name: string;
-  href: string;
-};
+import Footer from "../components/footer";
+import Header from "../components/header";
+import Navbar from "../components/navbar";
+import Background from "../assets/img/home-bg.jpg";
 
 export default function Home() {
-  const routes: Route[] = [
-    {
-      name: "Home",
-      href: "/",
-    },
-    {
-      name: "About",
-      href: "about",
-    },
-    {
-      name: "Blogs",
-      href: "blogs",
-    },
-    {
-      name: "Contact",
-      href: "contact",
-    },
-  ];
-
-  const navItems = routes.map((x) => {
-    return <NavItem key={x.name} name={x.name} href={x.href} />;
-  });
-
   return (
     <div className="App">
       <Navbar />
@@ -83,15 +55,5 @@ export default function Home() {
       </main>
       <Footer />
     </div>
-  );
-}
-
-function NavItem(props: Route) {
-  return (
-    <li className="nav-item">
-      <a className="nav-link px-lg-3 py-3 py-lg-4" href={props.href}>
-        {props.name}
-      </a>
-    </li>
   );
 }

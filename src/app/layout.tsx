@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "./css/styles.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +16,31 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <script
+          async
+          src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+        ></script>
+        <link
+          href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic"
+          rel="stylesheet"
+          type="text/css"
+        />
+        <link
+          href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800"
+          rel="stylesheet"
+          type="text/css"
+        />
+      </head>
+      <body>
+        {children}
+
+        {/* <!-- Bootstrap core JS--> */}
+        <script
+          async
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        ></script>
+      </body>
     </html>
   );
 }
